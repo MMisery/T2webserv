@@ -14,6 +14,7 @@ class TownSquare(Flask):
         return ext.init_app(self, *args, **kwargs)
 
     @staticmethod
+    #Create the application
     def create_app(config_name=None):
 
         app = TownSquare(__name__)
