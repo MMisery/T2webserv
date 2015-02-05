@@ -1,6 +1,8 @@
 
 from flask import Flask
 
+#Configuration file used for app
+import config
 
 class TownSquare(Flask):
 
@@ -19,10 +21,14 @@ class TownSquare(Flask):
 
         app = TownSquare(__name__)
 
+        #Set config on app
+        app.config.from_object(config)
+
         from townsquare.index import index
         app.register_blueprint(index)
 
         from townsquare.db import db
         app.init_extension(db)
+
 
         return app
