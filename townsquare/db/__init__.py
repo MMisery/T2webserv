@@ -5,4 +5,4 @@ from .models.role import Role
 
 
 
-db.create_all()
+
